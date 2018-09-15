@@ -46,6 +46,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-gem 'simple_form'
-gem "annotate", "~> 2.7"
 gem 'rack-cors', require: 'rack/cors'
+gem 'graphql', '1.7.4'
+
+# Added at 2018-09-15 15:50:01 +0200 by mheos:
+gem "foreman", "~> 0.64.0"
