@@ -37,7 +37,18 @@ class announces extends Component {
   }
 }
 
-export default styled(announces)``
+export default styled(announces)`
+  &.announces {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    .announces__column-left {
+      max-width: 20%;
+      padding: 2rem;
+    }
+  }
+`
 
 announces.defaultProps = {
   className: '',
