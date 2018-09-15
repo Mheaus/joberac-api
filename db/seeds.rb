@@ -18,6 +18,7 @@ puts "Everything Cleaned UP"
 UserRole.create!(name: "employeur")
 puts "UserRole created"
 
+pwd = "password"
 
 employer1 = User.new(
   password: pwd,
