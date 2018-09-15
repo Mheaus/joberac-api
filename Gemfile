@@ -47,3 +47,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'simple_form'
 gem "annotate", "~> 2.7"
+gem 'rack-cors', require: 'rack/cors'
