@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_14_231459) do
+ActiveRecord::Schema.define(version: 2018_09_15_162608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 2018_09_14_231459) do
     t.bigint "user_id"
     t.string "excerpt"
     t.index ["user_id"], name: "index_announces_on_user_id"
+  end
+
+  create_table "announces_tags", force: :cascade do |t|
+    t.bigint "announces_id"
+    t.bigint "tags_id"
+    t.index ["announces_id"], name: "index_announces_tags_on_announces_id"
+    t.index ["tags_id"], name: "index_announces_tags_on_tags_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -67,6 +74,17 @@ ActiveRecord::Schema.define(version: 2018_09_14_231459) do
     t.index ["user_role_id"], name: "index_users_on_user_role_id"
   end
 
+  create_table "users_tags", force: :cascade do |t|
+    t.bigint "users_id"
+    t.bigint "tags_id"
+    t.index ["tags_id"], name: "index_users_tags_on_tags_id"
+    t.index ["users_id"], name: "index_users_tags_on_users_id"
+  end
+
   add_foreign_key "announces", "users"
+  add_foreign_key "announces_tags", "announces", column: "announces_id"
+  add_foreign_key "announces_tags", "tags", column: "tags_id"
   add_foreign_key "users", "user_roles"
+  add_foreign_key "users_tags", "tags", column: "tags_id"
+  add_foreign_key "users_tags", "users", column: "users_id"
 end
