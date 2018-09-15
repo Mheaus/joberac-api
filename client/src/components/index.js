@@ -1,3 +1,5 @@
+import IdentityModule from './IdentityModule'
 import Layout from './Layout'
+import Navbar from './Navbar'
 
-export { Layout }
+export { IdentityModule, Layout, Navbar }

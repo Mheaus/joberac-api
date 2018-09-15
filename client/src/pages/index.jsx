@@ -1,41 +1,17 @@
-import React, { Component, Fragment } from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import { Layout } from "../components";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import NoMatch from './404'
+import Announces from './Announces'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      announces: []
-    };
-  }
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Announces} />
+      <Route component={NoMatch} />
+    </Switch>
+  </Router>
+)
 
-  componentDidMount = async () => {
-    const announces = await fetch(
-      "http://localhost:3001/api/v1/announces"
-    ).then(response => response.json());
-
-    this.setState({ announces });
-  };
-
-  render() {
-    const { announces } = this.state;
-
-    return (
-      <Layout className="App">
-        <Fragment>
-          <p>content</p>
-          {announces.map(announce => (
-            <div key={announce.id}>
-              coucou
-              {announce.id}
-            </div>
-          ))}
-        </Fragment>
-      </Layout>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'))

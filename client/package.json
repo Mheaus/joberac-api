@@ -1,5 +1,4 @@
 {
-  "name": "commerce-ambulant-a-vendre",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,8 +8,10 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
-    "styled-components": "^3.4.5"
+    "styled-components": "^3.4.6"
   },
   "proxy": {
     "/api": {
