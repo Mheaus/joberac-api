@@ -1,9 +1,9 @@
- import React, { Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 
 import { Layout } from "../components";
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
