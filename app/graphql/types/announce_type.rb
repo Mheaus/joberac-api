@@ -8,4 +8,5 @@ Types::AnnounceType = GraphQL::ObjectType.define do
   field :address, !types.String
   field :description, !types.String
   field :title, !types.String
+  field :user, -> { Types::UserType }
 end
